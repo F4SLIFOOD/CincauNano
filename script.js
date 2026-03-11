@@ -1,6 +1,9 @@
-
 let cart = []
 let total = 0
+
+const cartCount = document.getElementById("cart-count")
+const cartItems = document.getElementById("cart-items")
+const totalDisplay = document.getElementById("total")
 
 function addToCart(product, price){
 
@@ -8,16 +11,15 @@ cart.push({product,price})
 
 total += price
 
-updateCart()
+renderCart()
 
 }
 
-function updateCart(){
+function renderCart(){
 
-document.getElementById("cart-count").innerText = cart.length
+cartCount.innerText = cart.length
 
-let items = document.getElementById("cart-items")
-items.innerHTML = ""
+cartItems.innerHTML = ""
 
 cart.forEach((item,index)=>{
 
@@ -25,48 +27,85 @@ let li = document.createElement("li")
 
 li.innerHTML = `
 ${item.product} - Rp${item.price}
-<button onclick="removeItem(${index})">X</button>
+<button onclick="removeItem(${index})">x</button>
 `
 
-items.appendChild(li)
+cartItems.appendChild(li)
 
 })
 
-document.getElementById("cart-total").innerText = total
+totalDisplay.innerText = total
 
 }
 
 function removeItem(index){
 
 total -= cart[index].price
+
 cart.splice(index,1)
 
-updateCart()
+renderCart()
 
 }
 
 function toggleCart(){
 
-let cartModal = document.getElementById("cart")
+const cartModal = document.getElementById("cart")
 
-if(cartModal.style.display === "block"){
-cartModal.style.display = "none"
-}else{
-cartModal.style.display = "block"
-}
+cartModal.style.display =
+cartModal.style.display === "block" ? "none" : "block"
 
 }
 
-function checkout(){
+function showCheckout(){
+
+document.getElementById("order").scrollIntoView({
+behavior:"smooth"
+})
+
+}
+
+
+
+/* CHECKOUT WA */
+
+document.getElementById("checkoutForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+let name = document.getElementById("name").value
+let phone = document.getElementById("phone").value
+let address = document.getElementById("address").value
 
 let message = "Halo, saya ingin memesan CACINO.%0A"
 
 cart.forEach(item=>{
-message += item.product + " - Rp" + item.price + "%0A"
+message += `${item.product} - Rp${item.price}%0A`
 })
 
-message += "Total: Rp" + total
+message += `%0ATotal: Rp${total}%0A`
+message += `Nama: ${name}%0A`
+message += `No WA: ${phone}%0A`
+message += `Alamat: ${address}`
 
-window.open("https://wa.me/6281234567890?text="+message)
+window.open(`https://wa.me/6281234567890?text=${message}`)
 
-}
+})
+
+
+
+/* TESTIMONIAL SLIDER */
+
+let testimonials = document.querySelectorAll(".testimonial")
+
+let index = 0
+
+setInterval(()=>{
+
+testimonials[index].classList.remove("active")
+
+index = (index+1)%testimonials.length
+
+testimonials[index].classList.add("active")
+
+},4000)
