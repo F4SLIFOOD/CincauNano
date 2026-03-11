@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CACINO - Cappuccino Cincau Nano</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="logo">CACINO</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#product">Product</a>
+<a href="#pricing">Pricing</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#order">Order</a>
+</nav>
+
+<button class="order-btn">Order Now</button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h1>CACINO</h1>
+
+<h2>Cappuccino Cincau Nano</h2>
+
+<p>
+Perpaduan cappuccino creamy dan kenyalnya cincau dalam satu botol.
+Minuman kekinian yang segar, praktis, dan bikin nagih.
+</p>
+
+<div class="hero-buttons">
+<button class="btn-primary">Order Now</button>
+<button class="btn-secondary">View Menu</button>
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="drink">
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCT STORY ================= -->
+
+<section class="story" id="product">
+
+<h2>Why CACINO?</h2>
+
+<div class="story-cards">
+
+<div class="card">
+<h3>☕ Creamy Cappuccino</h3>
+<p>Rasa cappuccino lembut dengan aroma kopi yang nikmat.</p>
+</div>
+
+<div class="card">
+<h3>🧊 Fresh Cincau</h3>
+<p>Cincau kenyal yang memberi sensasi segar di setiap tegukan.</p>
+</div>
+
+<div class="card">
+<h3>🥤 Practical Bottle</h3>
+<p>Kemasan 250 mL yang praktis dibawa kemana saja.</p>
+</div>
+
+<div class="card">
+<h3>🔥 Trendy Drink</h3>
+<p>Minuman kekinian yang cocok untuk semua kalangan.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section class="pricing" id="pricing">
+
+<h2>Our Pricing</h2>
+
+<div class="pricing-cards">
+
+<div class="price-card">
+
+<h3>1 Bottle</h3>
+<h1>Rp8.000</h1>
+<button onclick="addToCart('1 Bottle',8000)">Add to Cart</button>
+
+</div>
+
+<div class="price-card">
+
+<h3>2 Bottle</h3>
+<h1>Rp15.000</h1>
+<button onclick="addToCart('2 Bottle',15000)">Add to Cart</button>
+
+</div>
+
+<div class="price-card best">
+
+<h3>4 Bottle</h3>
+<h1>Rp25.000</h1>
+<p>Best Deal</p>
+<button onclick="addToCart('4 Bottle',25000)">Add to Cart</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-icon" onclick="toggleCart()">
+🛒 <span id="cart-count">0</span>
+</div>
+
+<div class="cart-modal" id="cart">
+
+<h2>Your Cart</h2>
+
+<ul id="cart-items"></ul>
+
+<p>Total: Rp<span id="cart-total">0</span></p>
+
+<button onclick="checkout()">Checkout via WhatsApp</button>
+
+</div>
+
+
+<!-- ================= TESTIMONIAL ================= -->
+
+<section class="testimonials" id="testimonials">
+
+<h2>Customer Reviews</h2>
+
+<div class="testimonial-card">
+
+<p>
+⭐⭐⭐⭐⭐ <br>
+Segar banget! Cincau nya kerasa dan cappuccino nya creamy.
+</p>
+
+</div>
+
+<div class="testimonial-card">
+
+<p>
+⭐⭐⭐⭐⭐ <br>
+Minuman kekinian yang murah tapi enak.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>Rasakan Sensasi CACINO Sekarang!</h2>
+
+<button class="btn-primary">Order Now</button>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h3>CACINO</h3>
+
+<p>WhatsApp | Instagram</p>
+
+<p>© 2026 CACINO</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
